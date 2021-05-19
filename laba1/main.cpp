@@ -1,25 +1,12 @@
 #include<iostream>
 #include<string>
 #include <math.h>
-#include "keccak.h"
-using namespace std;
-typedef vector<char> vc;
+#include "sha3.h"
+
+
 
 int main() {
-
-	string str = "";
-	Keccak kcck(512);
-	//cout << kcck.bits_to_string("01110000");
-
-
-
-
-
-	//cout << str << "\n";
-	cout << kcck.run_algorithm(str) << "\n";
-	
-
-
-
-	return 0;
+    string message = "";
+    sha3 sha(512);
+    sha.printHash(message);
 }

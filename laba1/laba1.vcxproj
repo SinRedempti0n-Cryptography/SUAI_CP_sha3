@@ -23,6 +23,7 @@
     <ProjectGuid>{FF328BFF-25C1-4419-A465-2A51B60C23AF}</ProjectGuid>
     <RootNamespace>laba1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>sha3</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -138,11 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="keccak.h" />
+    <ClInclude Include="sha3.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="keccak.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="sha3.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
