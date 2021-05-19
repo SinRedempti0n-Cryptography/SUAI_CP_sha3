@@ -26,5 +26,5 @@ private:
 
 public:
     sha3(int);
-    void printHash(string);
+    string printHash(string);
 };

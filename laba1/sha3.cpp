@@ -1,5 +1,5 @@
 #include "sha3.h"
-#include <iostream>
+
 sha3::sha3(int output_length) {
 
 	capacity = output_length * 2; // cap = output * 2 xex
@@ -137,7 +137,7 @@ void sha3::iteration(string input) {
 
 string sha3::convertToCharArray(int len, v64 a){
 	string arr(len, '\0');
-	for (int j = 0; j < 8; j++)
+	for (int j = 0; j < len / 8; j++)
 		for (int i = 0; i < 8; i++)
 			arr[j * 8 + i] = (unsigned char)((a[j] >> i * 8) & 0xFF);
 	static const char hex_digits[] = "0123456789ABCDEF";
@@ -151,7 +151,7 @@ string sha3::convertToCharArray(int len, v64 a){
 	return output;
 }
 
-void sha3::printHash(string input) {
+string sha3::printHash(string input) {
 	this->data = input;
 	this->h = v64(25, 0);
 
@@ -166,7 +166,7 @@ void sha3::printHash(string input) {
 
 	iteration(buffer);
 	
-	string hash = convertToCharArray(64, h);
-	cout << hex << hash;
+	string hash = convertToCharArray(output_length / 8, h);
+	return hash;
 }
 
